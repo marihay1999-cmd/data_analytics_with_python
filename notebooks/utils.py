@@ -52,13 +52,13 @@ def my_bar_plot(
     return fig
 
 
-def csv_downloader(url: str, name: str, path: str) -> pd.DataFrame:
+def csv_downloader_url(url: str, name: str, path: str) -> pd.DataFrame:
     """
     Download a CSV from a url, save it locally, and return it as a DataFrame.
 
     Parameters
     ----------
-    url : str
+    url : strx
         Source path or url to the CSV file.
     name : str
         Output file name (e.g., "data.csv").
@@ -79,7 +79,7 @@ def csv_downloader(url: str, name: str, path: str) -> pd.DataFrame:
     ... )
     >>> df.head()
     """
-    df = pd.read_csv(url)
+    df = pd.read_csv()
     df.to_csv(f"{path}/{name}.csv", index=False)
     print(f"{name} saved in {path} | shape: {df.shape}")
     return df
@@ -180,3 +180,4 @@ if __name__ == "__main__":
         by="Y",
     )
     print(df.head())
+
